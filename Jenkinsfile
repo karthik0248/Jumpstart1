@@ -25,6 +25,12 @@ pipeline {
                 sh 'terraform validate'
             }
         }
+         stage('docker version check'){
+             steps{
+                 echo 'docker version check'
+                 sh 'docker --version'
+            }
+        }
         stage('docker image build'){
             steps{
                 sh 'sudo docker build -t nginx:1 .'

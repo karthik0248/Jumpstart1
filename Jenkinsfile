@@ -4,7 +4,7 @@ pipeline {
         stage('git pull'){
             steps{
                echo 'pull git repo'
-               git 'https://gitlab.com/jagarlamudirajesh34/terra-repo.git'
+               git 'https://github.com/karthik0248/Jumpstart1.git'
             }
         }
         stage('terrform version'){
@@ -27,8 +27,8 @@ pipeline {
         }
         stage('docker image build'){
             steps{
-                sh 'sudo docker build -t nginx:1'
-                sh 'sudo docker run -itd -p 80:80
+                sh 'sudo docker build -t nginx:1 .'
+                sh 'sudo docker run --name mynginx -itd -p 80:80 nginx:1'
             }
         }
     }

@@ -25,6 +25,12 @@ pipeline {
                 sh 'terraform validate'
             }
         }
+         stage('install docker'){
+            steps{
+                echo 'intallation docker
+                sh 'yum install docker -y'
+            }
+        }
          stage('docker version check'){
              steps{
                  echo 'docker version check'
